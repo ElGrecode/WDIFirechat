@@ -1,5 +1,5 @@
 {
-  "name": "tictactype",
+  "name": "angularjsstarter",
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
@@ -28,7 +28,7 @@
     "karma": "^0.12.17",
     "karma-jasmine": "^0.1.5",
     "karma-phantomjs-launcher": "^0.1.4",
-    "load-grunt-tasks": "^0.4.0",
+    "load-grunt-tasks": "^0.6.0",
     "time-grunt": "^0.3.1"
   },
   "engines": {

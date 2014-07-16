@@ -8,6 +8,16 @@
 </div>
 
 <div class="row marketing">
+  
+  <!-- So we bind to the model, but we want to update our Firebase everytime this model changes -->
+  <input type="text" class="form-control" ng-model="message.text">
+
+  <button type="button" class="btn btn-success" ng-click="setMessage()">Set Message</button>
+  <button type="button" class="btn btn-warning" ng-click="updateMessage()">Update Message</button>
+  <button type="button" class="btn btn-danger" ng-click="deleteMessage()">DeleteMessage</button>
+
+
+
   <h4>HTML5 Boilerplate</h4>
   <p>
     HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
