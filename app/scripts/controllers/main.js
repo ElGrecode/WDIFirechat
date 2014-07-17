@@ -26,6 +26,10 @@ angular.module('ticTacTypeApp')
         // We have to rap our function within a timeout so it goes up on the
         // call stack
         $timeout(function(){
+            snapshot.forEach(function(item){
+                console.log(item.name() + ' - ' +item.val() );
+                console.log(item.ref());
+            });
             var snapshotVal = snapshot.val();
             console.log(snapshotVal); 
             $scope.message = snapshotVal;
@@ -34,7 +38,7 @@ angular.module('ticTacTypeApp')
     });
 
     $scope.$watch('message.text', function(newVal){
-        if (!newVal){
+        if (!newVal){1
             return;
         }
         childRef.update({
