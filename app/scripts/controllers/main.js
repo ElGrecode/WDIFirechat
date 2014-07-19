@@ -11,6 +11,7 @@ angular.module('ticTacTypeApp')
     .controller('MainCtrl', function($scope, $timeout) {
         var rootRef = new Firebase('https://tictactypeapp.firebaseio.com/');
         var messagesRef = rootRef.child('messages');
+        var titleRef = rootRef.child('title');
         // $scope is a special object that makes
         // its properties available to the view as
         // variables. Here we set some default values:
@@ -20,9 +21,14 @@ angular.module('ticTacTypeApp')
             'Karma'
         ];
 
+        $scope.title = null;
         $scope.currentUser = null;
         $scope.currentText = null;
         $scope.messages = [];
+
+        titleRef.once('value', function(snapshot){
+            $scope.title = snapshot.val();
+        });
 
         // Every time the value is update on the child reference, the on
         // reference will fire
@@ -89,6 +95,11 @@ angular.module('ticTacTypeApp')
             };
             // Push gives us a unique name
             messagesRef.push(newMessage);
+        };
+
+        $scope.turnFeedOff = function(){
+            // We want to turn the feed off so we use off function on Firebase node
+            messagesRef.off();
         };
 
     });
