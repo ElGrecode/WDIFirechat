@@ -23,9 +23,7 @@ angular.module('ticTacTypeApp')
         $scope.messages = [];
 
         MessageService.childAdded(function(addedChild){
-            $timeout(function() {
                 $scope.messages.push(addedChild);
-            });
         });
 
         // The code below will check Firebase for the child being changed or removed
@@ -78,8 +76,13 @@ angular.module('ticTacTypeApp')
                 user : $scope.currentUser,
                 text : $scope.currentText
             };
-            // Push gives us a unique name
-            MessageService.add(newMessage);
+            // $add pushes and then returns us a unique name
+            var promise = MessageService.add(newMessage);
+
+            // Since we have a promise we can call the then() function on it
+            promise.then(function(data){
+                console.log(data.name());
+            });
         };
 
         $scope.turnFeedOff = function(){
