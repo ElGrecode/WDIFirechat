@@ -14,7 +14,9 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'firebase'
+    'firebase',
+    'routeSecurity',
+    'simpleLoginTools'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -24,7 +26,9 @@ angular
       })
       .when('/chat', {
         templateUrl: 'views/chat.html',
-        controller: 'ChatCtrl'
+        controller: 'ChatCtrl',
+        // we can use an attribute for authentication and control access to chat
+        authRequired: true
       })
       .when('/login', {
         templateUrl: 'views/login.html',
@@ -46,4 +50,5 @@ angular
         redirectTo: '/'
       });
   })
-  .constant('FBURL', 'https://wdifirechat.firebaseio.com/');
+  .constant('FBURL', 'https://wdifirechat.firebaseio.com/')
+  .constant('loginRedirectPath', '/login');
