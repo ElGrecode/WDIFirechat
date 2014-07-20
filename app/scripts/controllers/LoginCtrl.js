@@ -1,7 +1,7 @@
 /*global Firebase*/
 (function(angular){
   'use strict';
-  angular.module('ticTacTypeApp')
+  angular.module('wdifirechat')
     .controller('LoginCtrl', function($scope, $firebaseSimpleLogin, FBURL, $window, $rootScope){
         var fbRef = new Firebase(FBURL);
         $scope.errors = [];

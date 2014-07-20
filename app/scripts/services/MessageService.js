@@ -2,7 +2,7 @@
 (function(angular){
   'use strict';
 
-  angular.module('ticTacTypeApp').service('MessageService', function(FBURL, $firebase){
+  angular.module('wdifirechat').service('MessageService', function(FBURL, $firebase){
     var messageRef = new Firebase(FBURL).child('messages');
     var fireMessage = $firebase(messageRef);
     return {
@@ -16,9 +16,9 @@
                 // So we use a callback function
                 var val = data.snapshot.value;
                 cb.call(this, {
-                  user: val.user,
                   text: val.text,
-                  name: data.snapshot.name
+                  name: data.snapshot.name,
+                  email: val.email
                 });         
         }); 
       }, 

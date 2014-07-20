@@ -1,6 +1,6 @@
 (function(angular){
   'use strict';
-  angular.module('ticTacTypeApp')
+  angular.module('wdifirechat')
     .controller('ChatCtrl', function($scope, $timeout, MessageService) {
         // $scope is a special object that makes
         // its properties available to the view as
@@ -67,7 +67,9 @@
         $scope.sendMessage = function(){
             var newMessage = {
                 user : $scope.currentUser,
-                text : $scope.currentText
+                text : $scope.currentText,
+                email : $scope.user.email,
+                uid: $scope.user.uid
             };
             // $add pushes and then returns us a unique name
             var promise = MessageService.add(newMessage);

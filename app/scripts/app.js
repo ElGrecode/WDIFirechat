@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name ticTacTypeApp
+ * @name wdifirechat
  * @description
- * # ticTacTypeApp
+ * # wdifirechat
  *
  * Main module of the application.
  */
 angular
-  .module('ticTacTypeApp', [
+  .module('wdifirechat', [
     'ngCookies',
     'ngResource',
     'ngRoute',
@@ -46,4 +46,4 @@ angular
         redirectTo: '/'
       });
   })
-  .constant('FBURL', 'https://tictactypeapp.firebaseio.com/');
+  .constant('FBURL', 'https://wdifirechat.firebaseio.com/');

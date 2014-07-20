@@ -2,14 +2,18 @@
 
 /**
  * @ngdoc function
- * @name ticTacTypeApp.controller:MainCtrl
+ * @name wdifirechat.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the ticTacTypeApp
+ * Controller of the wdifirechat
  */
-angular.module('ticTacTypeApp')
+angular.module('wdifirechat')
     .controller('MainCtrl', function($scope){
-        $scope.adam = 'Adam';
+    $scope.awesomeThings = [
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Karma'
+    ];
 
 });
 
