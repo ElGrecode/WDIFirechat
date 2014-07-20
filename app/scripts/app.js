@@ -34,8 +34,12 @@ angular
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl'
       })
+      .when('/logout', {
+        templateUrl: 'views/logout.html',
+        controller: 'LogoutCtrl'
+      })
       .when('/about', {
-        templateUrl: 'views/about.html',
+        templateUrl: 'Logging out...',
         controller: 'AboutCtrl'
       })
       .otherwise({
