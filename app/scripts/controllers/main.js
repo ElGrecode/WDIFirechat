@@ -7,7 +7,11 @@
  * # MainCtrl
  * Controller of the ticTacTypeApp
  */
-angular.module('ticTacTypeApp');
+angular.module('ticTacTypeApp')
+    .controller('MainCtrl', function($scope){
+        $scope.adam = 'Adam';
+
+});
 
 
 
